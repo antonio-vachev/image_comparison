@@ -1,7 +1,6 @@
 from PIL import Image
 
 
-# noinspection PyUnresolvedReferences
 def process_and_overlay(image1_path, image2_path, output_path):
     """
     Processes two images and overlays the second on top of the first.
