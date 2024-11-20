@@ -1,13 +1,22 @@
-import class_setup as setup
+import subprocess
+import time
+import logging
+import pyautogui
+
+import pretest_setup as setup
+import pyperclip
+import os
+
+log = logging.getLogger()
 
 
 class TestImageComparison:
 
-    @classmethod
-    def setup_class(cls):
-        print(setup.prepare_new_test_directory())
-        print(setup.generate_resources())
+    def test_screenshot_from_editor(self, app_path, original_image_path, screenshot_path):
 
-    def test_foo(self):
-        value = 1
-        assert value == 1
+        pyperclip.copy(screenshot_path)
+
+        editor_app = subprocess.Popen([app_path, original_image_path])
+        time.sleep(1)
+
+        pyautogui.hotkey('f11')
