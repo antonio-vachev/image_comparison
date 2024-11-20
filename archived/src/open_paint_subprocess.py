@@ -5,7 +5,7 @@ import time
 import pyperclip
 
 # Set the path of original IMAGE_1.png
-original_image_path = r'..\resources\source_images\IMAGE_1.png'
+original_image_path = r'../../task/IMAGE_1.png'
 
 # Set the path of script generated REF_Image.jpg
 ref_image_path = rf'~\Code\image_comparison\resources\source_images\REF_Image.jpeg'

@@ -16,7 +16,7 @@ def locate_image_with_retries(image_path, timeout=10):
 subprocess.Popen("mspaint.exe")
 time.sleep(5)  # Adjust the delay as needed
 
-file_button = locate_image_with_retries('../resources/paint_buttons/file_button.png')
+file_button = locate_image_with_retries('resources/paint_buttons/file_button.png')
 if file_button:
     print("File button found at:", file_button)
     # Click the button or perform other actions

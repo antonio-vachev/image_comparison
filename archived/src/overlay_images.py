@@ -47,7 +47,7 @@ def process_and_overlay(image1_path, image2_path, output_path):
 
 if __name__ == "__main__":
     # Example usage:
-    image1_path = '../resources/source_images/IMAGE_1.png'
-    image2_path = '../results/difference.png'
-    output_path = '../results/overlay_image.png'
+    image1_path = '../../task/IMAGE_1.png'
+    image2_path = '../archived/results/difference.png'
+    output_path = '../archived/results/overlay_image.png'
     process_and_overlay(image1_path, image2_path, output_path)
