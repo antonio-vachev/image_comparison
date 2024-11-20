@@ -61,8 +61,17 @@ def original_image_path(current_build):
 
 
 @pytest.fixture
-def screenshot_path(current_build):
-    screenshot_path = rf'~\Code\image_comparison\tests\{current_build}\resources\REF_Image.jpeg'
-    expanded_screenshot_path = os.path.expanduser(screenshot_path)
-    return expanded_screenshot_path
+def secondary_original_image_path(current_build):
+    return f'.\\{current_build}\\resources\\IMAGE_2.png'
 
+
+@pytest.fixture
+def image_editor_export_path(current_build):
+    image_path = rf'~\Code\image_comparison\tests\{current_build}\resources\REF_Image.jpeg'
+    expanded_image_path = os.path.expanduser(image_path)
+    return expanded_image_path
+
+
+@pytest.fixture
+def screenshot_path(current_build):
+    return f'.\\{current_build}\\resources\\REF_Image_screenshot.png'
