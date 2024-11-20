@@ -15,10 +15,10 @@ expanded_ref_image_path = os.path.expanduser(ref_image_path)
 pyperclip.copy(expanded_ref_image_path)
 
 # Get the path of MS Paint desktop app
-paint_path = os.path.splitdrive(os.path.expanduser("~"))[0] + r"\WINDOWS\system32\mspaint.exe"
+app_path = os.path.splitdrive(os.path.expanduser("~"))[0] + r"\WINDOWS\system32\mspaint.exe"
 
 # Open the IMAGE_1.png with MS Paint desktop app
-ms_paint = subprocess.Popen([paint_path, original_image_path])
+ms_paint = subprocess.Popen([app_path, original_image_path])
 time.sleep(2)
 
 # Enter full screen in MS Paint desktop app
@@ -49,6 +49,7 @@ pyautogui.hotkey('enter')
 time.sleep(2)
 
 # Close MS Paint desktop app
+
 ms_paint.kill()
 
 # Remove the saved REF_Image.jpg

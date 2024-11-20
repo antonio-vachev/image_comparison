@@ -10,7 +10,9 @@ def generate_new_build(json_file):
         file.seek(0)
         json.dump(data, file, indent=4)
         file.truncate()
+        return new_build
 
 
 if __name__ == "__main__":
-    generate_new_build('builds.json')
+    build = generate_new_build('builds.json')
+    print(f'New build has been generated: {build}')
