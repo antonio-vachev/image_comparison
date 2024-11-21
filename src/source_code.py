@@ -1,3 +1,3 @@
 list_of_changes = [
-    0,
+    0, 1
 ]
