@@ -1,12 +1,11 @@
+only:
+  - changes:
+    - src/
 
 stages:
   - build
   - test
   - deploy
-
-only:
-  - changes:
-    - src/
 
 build:
   stage: build
