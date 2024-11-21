@@ -2,6 +2,7 @@ import subprocess
 import time
 import logging
 import pyautogui
+import shutil
 from PIL import Image, ImageChops
 import pytest
 import pyperclip
@@ -83,7 +84,7 @@ class TestImageComparison:
         time.sleep(1)
         # Press 'Yes' to .png warning from MS Paint
         pyautogui.hotkey('enter')
-        logger.debug('Image exported.')
+        logger.debug('Image successfully exported.')
         time.sleep(1)
         # Close MS Paint desktop app
         editor_app.kill()
@@ -99,7 +100,7 @@ class TestImageComparison:
         if os.path.isfile(img1_path) and os.path.isfile(img2_path):
             img1 = Image.open(rf'.\{current_build}\resources\IMAGE_2.png')
             img2 = Image.open(rf'.\{current_build}\resources\REF_Image.jpeg')
-            logger.debug('Images are loaded.')
+            logger.debug('Images successfully loaded.')
 
             img1 = img1.convert('RGB')
             img2 = img2.convert('RGB')
@@ -126,7 +127,7 @@ class TestImageComparison:
         original_path = secondary_original_image_path
         output_path = rf'.\{current_build}\results\differences_overlay.png'
         if os.path.isfile(difference_path) and os.path.isfile(original_path):
-            logger.debug('Images are loaded.')
+            logger.debug('Images successfully loaded.')
 
         if os.path.isfile(difference_path):
             overlay_images(original_path, difference_path, output_path)
@@ -134,3 +135,10 @@ class TestImageComparison:
 
         assert os.path.isfile(output_path), "Differences overlay processing has failed."
 
+    def test_generate_report(self, move_report):
+        if move_report:
+            logger.debug('Test report successfully created.')
+        else:
+            logger.debug('Test report unsuccessfully created.')
+
+        assert move_report, 'Test report operation failed'

@@ -13,7 +13,7 @@ from pytest_metadata.plugin import metadata_key
 
 @pytest.fixture(scope='class')
 def current_build():
-    with open('../builds/builds.json', 'r') as file:
+    with open('..\\builds\\builds.json', 'r') as file:
         data = json.load(file)
         latest_build = str(data['builds'][-1])
 
@@ -50,6 +50,17 @@ def generate_resources(prepare_new_test_directory):
 
 
 @pytest.fixture
+def move_report(current_build):
+    current_report_path = r".\ImageComparisonReport.html"
+    destination_path = rf".\{current_build}\results"
+    if os.path.isfile(current_report_path):
+        shutil.move(current_report_path, destination_path)
+        return True
+    else:
+        return False
+
+
+@pytest.fixture
 def app_path():
     return os.path.splitdrive(os.path.expanduser("~"))[0] + r"\WINDOWS\system32\mspaint.exe"
 
@@ -82,3 +93,7 @@ def pytest_html_report_title(report):
 
 def pytest_configure(config):
     config.stash[metadata_key]["Project"] = "Antonio's Skill Check for Chaos"
+
+
+
+
