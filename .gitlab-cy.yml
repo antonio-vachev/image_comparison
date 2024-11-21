@@ -1,0 +1,30 @@
+
+stages:
+  - build
+  - test
+  - deploy
+
+build:
+  stage: build
+  script:
+    - echo "Building the project..."
+    - python ./builds/generate_new_build.py
+    - echo "New build is completed."
+  artifacts:
+    - builds/
+
+test:
+  stage: test
+  script:
+    - echo "Running tests..."
+    - echo "Test run is completed."
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying the project..."
+    - echo "The project is deployed"
+
+only:
+  - changes:
+    - src/
