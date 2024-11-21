@@ -1,7 +1,7 @@
 from PIL import Image
 
 
-def process_and_overlay(image1_path, image2_path, output_path):
+def overlay_images(image1_path, image2_path, output_path):
     """
     Processes two images and overlays the second on top of the first.
 
@@ -47,7 +47,7 @@ def process_and_overlay(image1_path, image2_path, output_path):
 
 if __name__ == "__main__":
     # Example usage:
-    image1_path = r'C:\Users\AVachev\Code\image_comparison\tests\20241120_161444\resources\IMAGE_2.png'
-    image2_path = r'C:\Users\AVachev\Code\image_comparison\tests\20241120_161444\resources\REF_Image.jpeg'
-    output_path = r'C:\Users\AVachev\Code\image_comparison\archived\results\difference.png'
-    process_and_overlay(image1_path, image2_path, output_path)
+    image1_path = r'.\20241120_211929\resources\IMAGE_2.png'
+    image2_path = r'.\20241120_211929\results\differences.png'
+    output_path = r'.\20241120_211929\results\differences_overlay.png'
+    overlay_images(image1_path, image2_path, output_path)

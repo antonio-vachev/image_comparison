@@ -4,7 +4,7 @@ import shutil
 
 
 def current_build():
-    with open('../builds/builds.json', 'r') as file:
+    with open('../../builds/builds.json', 'r') as file:
         data = json.load(file)
         latest_build = str(data['builds'][-1])
 

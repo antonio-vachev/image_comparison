@@ -7,9 +7,8 @@ import time
 import pyperclip
 import logging
 import json
-
-
-log = logging.getLogger()
+import pytest_html
+from pytest_metadata.plugin import metadata_key
 
 
 @pytest.fixture(scope='class')
@@ -75,3 +74,11 @@ def image_editor_export_path(current_build):
 @pytest.fixture
 def screenshot_path(current_build):
     return f'.\\{current_build}\\resources\\REF_Image_screenshot.png'
+
+
+def pytest_html_report_title(report):
+    report.title = f"Test Automation report on class TestImageComparison."
+
+
+def pytest_configure(config):
+    config.stash[metadata_key]["Project"] = "Antonio's Skill Check for Chaos"
