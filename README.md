@@ -37,9 +37,9 @@ The following repository contains test cases based on PyTest used for verificati
 
 ## Usage
 
-### Simulate new build
+### Generate new *build* number
 
-The testing process uses a "new_build" mockup to create a unique test folder for each testing cycle. In order to generate a new build number, execute the generate_new_build.py script inside ./builds
+The testing process uses a "build" mockup to create a unique test folder for each testing cycle. In order to generate a new build number, execute the generate_new_build.py script inside ./builds
 This will add a unique "build" number to an existing .json file.
 
    ```bash
