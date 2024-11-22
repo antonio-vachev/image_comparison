@@ -14,5 +14,5 @@ def generate_new_build(json_file):
 
 
 if __name__ == "__main__":
-    build = generate_new_build('builds.json')
+    build = generate_new_build(r'builds.json')
     print(f'New build has been generated: {build}')

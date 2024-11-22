@@ -135,10 +135,7 @@ class TestImageComparison:
 
         assert os.path.isfile(output_path), "Differences overlay processing has failed."
 
-    def test_generate_report(self, move_report):
-        if move_report:
-            logger.debug('Test report successfully created.')
-        else:
-            logger.debug('Test report unsuccessfully created.')
+    def test_generate_report(self, current_build):
 
-        assert move_report, 'Test report operation failed'
+        current_report_path = r".\ImageComparisonReport.html"
+        assert os.path.isfile(current_report_path), 'Report generation has failed.'

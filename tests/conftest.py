@@ -49,15 +49,15 @@ def generate_resources(prepare_new_test_directory):
     return f"Resources are created in '{destination_dir}'"
 
 
-@pytest.fixture
-def move_report(current_build):
-    current_report_path = r".\ImageComparisonReport.html"
-    destination_path = rf".\{current_build}\results"
-    if os.path.isfile(current_report_path):
-        shutil.move(current_report_path, destination_path)
-        return True
-    else:
-        return False
+# @pytest.fixture
+# def move_report(current_build):
+#     current_report_path = r".\ImageComparisonReport.html"
+#     destination_path = rf".\{current_build}\results"
+#     if os.path.isfile(current_report_path):
+#         shutil.move(current_report_path, destination_path)
+#         return True
+#     else:
+#         return False
 
 
 @pytest.fixture
