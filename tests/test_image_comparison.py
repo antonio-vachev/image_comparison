@@ -2,7 +2,6 @@ import subprocess
 import time
 import logging
 import pyautogui
-import shutil
 from PIL import Image, ImageChops
 import pytest
 import pyperclip
